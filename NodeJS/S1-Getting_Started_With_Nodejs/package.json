@@ -1,0 +1,19 @@
+{
+  "name": "firstserver",
+  "version": "1.0.0",
+  "description": "first server app using nodejs",
+  "main": "V3-server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "go": "nodemon V3-server.js",
+    "start": "node V3-server.js"
+  },
+  "author": "pulkit sharma",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^3.1.9"
+  },
+  "dependencies": {
+    "mongodb": "^6.15.0"
+  }
+}
