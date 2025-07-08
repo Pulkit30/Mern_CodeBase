@@ -13,8 +13,8 @@ const server = http.createServer((req, res) => {
     req.on("end", () => {
       fs.appendFileSync("data.txt", data);
       console.log(fs.readFileSync("data.txt", "utf-8"));
+      res.end("data received");
     });
-    res.end("data received");
   }
 });
 
