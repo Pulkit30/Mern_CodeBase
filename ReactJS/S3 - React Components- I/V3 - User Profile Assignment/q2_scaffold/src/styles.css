@@ -1,0 +1,18 @@
+/* Write code for your CSS here */
+.btn{
+    background-color: aqua;
+    border:None;
+    margin:5px;
+    font-size:14px;
+}
+.horizontal-menu {
+  list-style-type: none; /* Removes bullets */
+  margin: 0;
+  padding: 0;
+  display: flex; /* Displays list items horizontally */
+  gap: 20px; /* Adds space between items */
+}
+
+.horizontal-menu li {
+  display: inline; /* Ensures items are inline */
+}
