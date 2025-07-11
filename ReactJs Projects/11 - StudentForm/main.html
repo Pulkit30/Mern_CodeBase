@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script
+      crossorigin
+      src="https://unpkg.com/react@18/umd/react.development.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
+    ></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <title>React App</title>
+  </head>
+
+  <body>
+    <div id="root"></div>
+   
+    <script type="text/babel">
+     let ref1=React.createRef()
+     let ref2=React.createRef()
+     const tableData=[]
+     const submitDetails=(event)=>{
+      event.preventDefault()
+      tableData.push({'name':ref1.current.value,'marks':ref2.current.value})
+      rootElement.render(<App />);
+     }
+      const Form = () =>(
+           <form onSubmit={submitDetails}>
+              <input ref={ref1}  placeholder="test" />
+              <input ref={ref2} placeholder="Marks" />
+              <button>Submit</button>
+           </form>
+      )
+
+      const Result = () => (
+      <p>
+        <table border="1px solid black">
+          <thead>
+            <tr>
+            <th>Student's name</th>
+            <th>Marks</th>
+            </tr>
+          </thead>
+          <tbody>
+                 {tableData.map((item)=>(
+                     <tr>
+                        <td>{item.name}</td>
+                        <td>{item.marks}</td>
+                     </tr>
+                 ))}
+          </tbody>
+        </table>
+      </p>
+      )
+
+      const App = () => (
+        <>
+          <h2>Students' form</h2>
+          <Form />
+          <Result />
+        </>
+      );
+
+      const rootElement = ReactDOM.createRoot(document.getElementById("root"));
+      rootElement.render(<App />);
+    </script>
+  </body>
+</html>
