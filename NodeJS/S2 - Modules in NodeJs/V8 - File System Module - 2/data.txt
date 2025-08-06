@@ -1,3 +1,0 @@
-name: John Doe
-dept: Finance
-position: Manager
