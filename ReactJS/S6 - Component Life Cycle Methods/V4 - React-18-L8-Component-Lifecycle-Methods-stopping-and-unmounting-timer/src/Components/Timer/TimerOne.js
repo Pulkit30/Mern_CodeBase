@@ -5,17 +5,16 @@ export default class TimerOne extends React.Component {
     super();
 
     this.state = {
-      time: 0
+      time: 0,
     };
 
     this.timer = null;
   }
 
-
   componentDidMount() {
     console.log("Timer ComponentDidMount");
     console.log("_________________________________");
-    
+
     this.timer = setInterval(() => {
       this.setState((prevState) => ({ time: prevState.time + 1 }));
     }, 1000);
@@ -36,13 +35,14 @@ export default class TimerOne extends React.Component {
   componentDidUpdate(prevProps, prevState, snapshot) {
     console.log("Timer componentDidUpdate");
     console.log("_________________________________");
+    //  if (this.state.time === 10) {
+    //   clearInterval(this.timer);
+    // }
   }
 
   componentWillUnmount() {
     console.log("Timer componentWillUnmount");
-    if (this.state.time === 10) {
-      clearInterval(this.timer);
-    }
+    clearInterval(this.timer);
   }
 
   render() {

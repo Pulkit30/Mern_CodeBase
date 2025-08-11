@@ -7,7 +7,6 @@ class ComponentB extends Component {
       name: "ComponentB",
     }
     console.log("ComponentB Constructor");
-
   }
 
   static getDerivedStateFromProps() {

@@ -24,14 +24,17 @@ export default class TimerOne extends React.Component {
   }
 
   shouldComponentUpdate(nextProps, nextState) {
-    console.log(this.state.time);
+    console.log(`Should Component Update`);
+    console.log(`nextProps:${nextProps.timerOn},current:${this.props.timerOn}`);
+    console.log(`nextState:${nextState.time},current:${this.state.time}`);
     return nextProps.timerOn !== this.props.timerOn || nextState.time % 5 === 0;
   }
 
   componentDidUpdate(prevProps, prevState, snapshot) {
     console.log("Timer componentDidUpdate");
     console.log("_________________________________");
-
+    console.log(`PrevProps:${prevProps.timerOn},current:${this.props.timerOn}`);
+    console.log(`PrevState:${prevState.time},current:${this.state.time}`);
     if (prevProps.timerOn !== this.props.timerOn) {
       if (this.props.timerOn) {
         this.timer = setInterval(() => {

@@ -5,12 +5,11 @@ export default class TimerOne extends React.Component {
     super();
 
     this.state = {
-      time: 0
+      time: 0,
     };
 
     this.timer = null;
   }
-
 
   componentDidMount() {
     console.log("Timer ComponentDidMount");
